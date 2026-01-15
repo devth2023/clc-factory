@@ -1,0 +1,35 @@
+includes:
+  - phpstan-strict-rules.neon
+
+parameters:
+  level: 9
+  paths:
+    - app
+    - tests
+    - database
+
+  strictRules:
+    disallowUnusedMatchResult: true
+
+  ignoreErrors:
+    # Laravel specific
+    - identifier: missingType.iterableValue
+      paths:
+        - app/Http/Controllers/TunnelController.php
+
+  scanDirectories:
+    - app
+    - tests
+    - database/seeders
+
+  scanFiles:
+    - routes/api.php
+
+  excludePaths:
+    - vendor
+    - storage
+    - bootstrap
+
+  errorFormat: table
+
+  reportUnmatchedIgnoredErrors: true

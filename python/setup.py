@@ -1,0 +1,30 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="clc-factory",
+    version="1.0.0",
+    description="Coordinate Logic Core - Production-Grade Bit-Driven Architecture",
+    author="CLC Team",
+    license="Proprietary",
+    packages=find_packages(),
+    python_requires=">=3.10",
+    install_requires=[
+        "flask==3.0.0",
+        "sqlalchemy==2.0.23",
+        "flask-sqlalchemy==3.1.1",
+        "pydantic==2.5.0",
+        "python-dotenv==1.0.0",
+        "pyyaml==6.0.1",
+        "pytest==7.4.3",
+        "pytest-cov==4.1.0",
+        "pytest-flask==1.3.0",
+    ],
+    extras_require={
+        "dev": [
+            "black==23.12.0",
+            "flake8==6.1.0",
+            "mypy==1.7.1",
+            "isort==5.13.2",
+        ],
+    },
+)
